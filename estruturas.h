@@ -45,10 +45,10 @@ typedef enum {
     INFO_COMPRA 
 } TipoInfo;
 
-typedef struct {
-    int quantidadeMin;
-    int quantidadeMax;
-    float precoUnitario;
+typedef struct { 
+    int quantidadeMin; 
+    int quantidadeMax; 
+    float precoUnitario; 
 } FaixaPreco;
 
 typedef struct Produto {
@@ -63,10 +63,10 @@ typedef struct Produto {
     int quantidadeFaixas;
 } Produto;
 
-typedef struct {
-    int dia;
-    int mes;
-    int ano;
+typedef struct { 
+    int dia; 
+    int mes; 
+    int ano; 
 } Data;
 
 typedef struct ItemCompra {
@@ -102,12 +102,10 @@ struct No23 {
     No23 *dir;
     int quantidadeInfos;
 };
-
-typedef struct {
-    No23 *produtos;
-    No23 *clientes;
+typedef struct { 
+    No23 *produtos; 
+    No23 *clientes; 
 } Fabrica;
-
 
 int compararInfo(void *a, void *b, int tipo);
 
@@ -151,8 +149,16 @@ void registrarCompra(Fabrica *fabrica);
 
 void consultarCompra(Cliente *cliente);
 
-void removerCompra(Cliente *cliente);
+void removerCompra(Cliente *cliente, Fabrica *fabrica);
 
 void menu_experimento(void);
+
+void gerarCNPJ(char *cnpj, int numero);
+
+void embaralhar(int valores[], int quantidade);
+
+void executarOrdem(int ordem[], int quantidade, int modo, int buscas[]);
+
+void limparBufferMain(void);
 
 #endif
